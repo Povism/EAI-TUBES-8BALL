@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8Ball — Game Price Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <div style="display:flex;align-items:center;gap:20px">
+    <a class="logo" href="#">🎱 8BALL </a>
+  </div>
+</nav>
+
+<div class="subnav">
+  <button data-view="search" class="subnav-link active">⊞ Dashboard / Search</button>
+  <button data-view="wishlist" class="subnav-link">🛒 Wishlist</button>
+</div>
+
+<main class="main">
+
+  <section id="view-search" class="view active">
+    <div class="section-header">
+      <div class="section-title">Compare Game Prices</div>
+    </div>
+
+    <div class="search-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input class="search-input" id="search-input" type="text" placeholder="Search game title, publisher, franchise...">
+      </div>
+      <button class="search-btn" id="search-btn">Search</button>
+    </div>
+
+    <div id="search-results" class="grid">
+      <p class="empty-msg">Type a title above and click search to compare prices.</p>
+    </div>
+  </section>
+
+  <section id="view-wishlist" class="view">
+    <div class="section-header">
+      <div class="section-title">My Tracked Wishlist</div>
+    </div>
+
+    <div id="wishlist-results" class="grid">
+      <p class="empty-msg">Your wishlist is empty.</p>
+    </div>
+  </section>
+
+  <div id="detail-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="modal-close" class="close-btn">&times;</button>
+      
+      <h2 id="modal-title">Game Title</h2>
+      <img id="modal-thumb" src="" alt="Game Cover" />
+
+      <h3>Price Comparison Options</h3>
+      <div id="modal-deals" class="deals-list"></div>
+
+      <div class="modal-actions">
+        <button id="modal-wishlist-btn" class="action-accent-btn">+ Add to Wishlist</button>
+      </div>
+
+      <h3>User Community Reviews</h3>
+      <div id="modal-reviews" class="reviews-list"></div>
+
+      <h3>Leave a Review</h3>
+      <form id="review-form">
+        <input type="text" id="review-username" placeholder="Your name" required />
+        <select id="review-rating">
+          <option value="5">★★★★★ (5)</option>
+          <option value="4">★★★★☆ (4)</option>
+          <option value="3">★★★☆☆ (3)</option>
+          <option value="2">★★☆☆☆ (2)</option>
+          <option value="1">★☆☆☆☆ (1)</option>
+        </select>
+        <textarea id="review-comment" placeholder="Write your review experience..."></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<div class="footer-row">
+  <span>© 2026 8Ball Marketplace — All rights reserved</span>
+  <span style="color: var(--text-muted)">High-Performance Interface Protocol</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
